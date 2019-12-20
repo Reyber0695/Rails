@@ -1,0 +1,518 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.center {
+  margin: auto;
+}
+
+@mixin only-flex {
+  display: flex;
+}
+
+@mixin flex-box($position,$horizontal, $vertical) {
+  display: flex;
+  flex-direction: $position;
+  justify-content: $horizontal;
+  align-items: $vertical;
+}
+
+@mixin typography {
+  font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@mixin section-borders {
+  border: solid 1px #E4E1D3;
+}
+
+$mobile_width: 375px;
+
+.all-container {
+  width: $mobile_width;
+  border: 1px red solid;
+  @include only-flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 376px){
+    width: 750px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+header {
+  width: $mobile_width;
+  height: 70px;
+  @include only-flex;
+  @include section-borders;
+  @media (min-width: 376px) {
+    width: 750px;
+    height: 150px;
+  }
+
+  .container-size-small {
+    height: 70px;
+    width: 100px;
+
+  }
+
+  .container-size-small.arrow {
+
+    @include flex-box(row, flex-start, center);
+    
+    @media (min-width: 376px) {
+      display: none;
+    }
+
+    img {
+      margin-left: 20px;
+      height: 30px;
+      width: 36px;
+    }
+  }
+
+  .container-size-small.default {
+    @include only-flex;
+    justify-content: center;
+    
+    @media (min-width: 376px) {
+      display: none;
+    }
+
+    img {
+      margin-top: 15px;
+      width: 30px;
+      height: 30px;
+    }
+    
+  }
+
+  .container-size-big {
+    height: 70px;
+    width: 175px;
+    @media (min-width: 376px) {
+      display: none;
+    }
+  }
+
+  .container-size-big.homie {
+    @include only-flex;
+    justify-content: center;
+
+    @media (min-width: 376px) {
+      display: none;
+    }
+
+    img {
+      height: 40px;
+      margin-top: 12px;
+      width: 80px;
+    }
+  }
+
+  .head-desktop {
+    height: 150px;
+    width: 150px;
+    margin-left: 100px;
+    @include flex-box(row, center, center);
+
+    @media (min-width: 376px) {
+        display: flex;
+      }
+    @media (max-width: 375px){
+        display: none;
+      }
+  
+
+    img {
+      width: 90px;
+      height: 90px;
+    }
+  }
+
+  .text-desktop {
+    height: 150px;
+    width: 400px;
+    @include flex-box(column, flex-start, flex-start);
+
+    @media (min-width: 376px) {
+      display: flex;
+    }
+    @media (max-width: 375px){
+      display: none;
+    }
+
+    span {
+      display: block;
+      @include typography;
+      font-size: 33px;
+      margin-top: 30px;
+    }
+
+    p {
+      @include typography;
+      font-size: 13px;
+      margin-top: 20px;
+    }
+  }
+}
+
+.report {
+  @include section-borders;
+  margin-top: 10px;
+  width: 330px;
+  height: 100px;
+  @include flex-box(column, flex-start, center);
+  @media (min-width: 376px){
+    display: none;
+  }
+
+  .header-report {
+    font-size: 20px;
+    color: #333333;
+    @include typography;
+    margin-top: 10px;
+  }
+
+  .paragraph-report {
+    @include only-flex;
+    flex-direction: column;
+    font-size: 13px;
+    @include typography;
+    text-align: center;
+    margin-top: 10px;
+    color: #333333;
+  }
+
+}
+
+.graph {
+  border: 1px red solid;
+  width: 330px;
+  height: 700px;
+  @include only-flex;
+  @include section-borders;
+  flex-direction: column;
+  margin-top: 10px;
+  
+  .graph-container {
+
+    width: 330px;
+    height: 320px;
+    @include flex-box(column, flex-start, center);
+    
+
+    .graph-circle {
+      width: 200px;
+      height: 200px;
+      background-image: url(image-path('circle.png'));
+      background-size: 100% 100%;
+      @include flex-box(row, center, center);
+      font-size: 50px;
+      @include typography;
+      font-weight: bold;
+      margin-top: 30px;
+
+      @media (min-width: 376px) {
+        width: 150px;
+        height: 150px;
+        margin-top: 3px;
+      }
+    }
+
+    .graph-range {
+      width: 220px;
+      height: 20px;
+      font-size: 20px;
+      @include flex-box(row, space-between, center);
+      @include typography;
+      margin-top: 20px;
+      font-weight: bold;
+
+      @media (min-width: 376px) {
+        width: 170px;
+      }
+    }
+
+    .graph-bars {
+      width: 230px;
+      height: 15px;
+      margin-top: 10px;
+
+      @media (min-width: 376px) {
+        width: 180px;
+      }
+
+      img {
+        width: 180px;
+        height: 15px;
+      }
+
+
+    }
+
+    .graph-info {
+      width: 230px;
+      height: 15px;
+      @include typography;
+      font-size: 10px;
+      @include flex-box(row, space-around, center);
+
+      @media (min-width: 376px) {
+        width: 180px;
+      }
+
+      span {
+        width: 25%;
+        text-align: center;
+      }
+    }
+
+    .points {
+      font-size: 23px;
+      font-weight: 600;
+      @include typography;
+      margin-top: 20px;
+      width: 250px;
+    }
+
+    p {
+      @include typography;
+      width: 260px;
+      font-size: 14px;
+      margin-top: 10px;
+      text-align: center;
+      padding: 5px;
+    }
+  }
+
+  .info-container {
+    
+    width: 330px;
+    height: 380px;
+    background-color: rgb(205, 215, 52);
+    @include flex-box(column, flex-start, flex-start);
+    @media (min-width: 376px) {
+      padding-top: 30px;
+    }
+    
+    span {
+      margin-left: 30px;
+      margin-bottom: 20px;
+      @include typography;
+    }
+  }
+}
+
+.profile-card {
+  @include section-borders;
+  width: 330px;
+  height: 150px;
+  @include only-flex;
+  
+  @media (min-width: 376px){
+    width: 400px;
+    height: 187px;
+    flex-wrap: wrap;
+  }
+
+  .profile {
+    height: 150px;
+    width: 120px;
+    @include flex-box(row, center, center);
+
+    @media (min-width: 376px){
+      height: 100px;
+      width: 400px;
+
+    }
+
+    img {
+      width: 90px;
+      height: 90px;
+    }
+  }
+
+  .profile-info {
+    height: 150px;
+    width: 210px;
+    padding-top: 10px;
+    
+    @media (min-width: 376px){
+      height: 87px;
+      width: 400px;
+      @include flex-box(column, flex-start, center);
+    }
+
+    .title-info {
+      @include typography;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .paragraph-profile {
+      @include typography;
+      font-size: 14px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+
+      @media (min-width: 376px){
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    .price {
+      @include typography;
+      font-size: 14px;
+    }
+  }
+}
+
+.user-info {
+  margin-top: 10px;
+  width: 330px;
+  @include section-borders;
+
+  @media (min-width: 376px) {
+    width: 400px;
+  }
+
+  .user-info-item {
+    height: 50px;
+    width: 330px;
+    @include only-flex;
+
+    .icons {
+      height: 50px;
+      width: 100px;
+      @include flex-box(row, center, center);
+
+      @media (min-width: 376px){
+        width: 70px;
+      }
+
+      img {
+        height: 25px;
+        width: 30px;
+      }
+    }
+
+    .text {
+      height: 50px;
+      width: 230px;
+      @include only-flex;
+      align-items: center;
+      @include typography;
+      font-size: 13px;
+    }
+  }
+
+  .user-info-item-person {
+    height: 80px;
+    width: 330px;
+    @include only-flex;
+
+    .icons {
+      height: 80px;
+      width: 100px;
+      @include flex-box(row, center, center);
+      @media (min-width: 376px){
+        width: 70px;
+      }
+
+      img {
+        height: 25px;
+        width: 30px;
+      }
+    }
+
+    .text {
+      height: 80px;
+      width: 230px;
+      @include only-flex;
+      align-items: center;
+      @include typography;
+      font-size: 13px;
+
+      p {
+        @include only-flex;
+        flex-direction: column;
+        font-size: 12px;
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+.homie-technology {
+  border: 1px red solid;
+  margin-top: 10px;
+  height: 150px;
+  width: 330px;
+  @include section-borders;
+  @include flex-box(column, flex-start, center);
+
+  @media (min-width: 376px){
+    width: 750px;
+  }
+
+  .homie-tec-paragraph {
+    @include only-flex;
+    flex-direction: column;
+    @include typography;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 30px;
+    
+    .mobile {
+      @media (min-width: 376px) {
+        display: none;
+      }
+      @media (max-width: 375px){
+        display: block;
+      }
+    }
+
+    .desktop {
+
+      font-size: 18px;
+      font-weight: bold;
+      @media (min-width: 376px) {
+        display: block;
+      }
+      @media (max-width: 375px){
+        display: none;
+      }
+    }
+  }
+
+  img {
+    width: 100px;
+    height: 30px;
+    margin-top: 20px;
+  }
+}
+
+.save-button {
+  margin-top: 10px;
+  width: 350px;
+  height: 50px;
+  @include flex-box(row, flex-start, center);
+
+  button {
+    padding: 5px;
+    @include typography;
+    border: 0;
+    @include section-borders;
+    background-color: #fff;
+
+    i {
+      margin-right: 10px;
+    }
+  }
+}
