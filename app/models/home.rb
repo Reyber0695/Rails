@@ -1,14 +1,29 @@
 class Home
   include Mongoid::Document
+
+  before_validation :set_total_amount
+
   field :price, type: Float
-  field :extra_ervice, type: Float
+  field :extra_services, type: Float
   field :total_amount, type: Float
-  field :home_features, type: Hash
-  field :garden, type: Boolean
-  field :furnished, type: Boolean
-  field :gym, type: Boolean
+  field :home_features, type: Hash, default:
+    {
+      garden: false, 
+      furnished: false,
+      gym: false
+    }
 
   has_many :rents
-  belongs_to :user
   belongs_to :owner
+
+  validates :price, presence: true
+  validates :extra_services, presence: true
+  validates :total_amount, presence: true
+  validates :home_features, presence: true
+
+  private
+
+  def set_total_amount
+    self.total_amount = price + extra_services
+  end
 end
