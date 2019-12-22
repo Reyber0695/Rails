@@ -9,6 +9,7 @@ RSpec.describe Home, type: :model do
   end
 
   describe 'Validations' do
+    it { should validate_presence_of :status }
     it { should validate_presence_of :price }
     it { should validate_presence_of :extra_services }
     it { should validate_presence_of :total_amount }

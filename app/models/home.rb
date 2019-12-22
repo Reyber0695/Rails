@@ -1,5 +1,8 @@
 class Home
   include Mongoid::Document
+  include Mongoid::Enum
+
+  enum :status, [:in_progress, :published, :rented]
 
   before_validation :set_total_amount
 
@@ -16,6 +19,7 @@ class Home
   has_many :rents
   belongs_to :owner
 
+  validates :status, presence: true
   validates :price, presence: true
   validates :extra_services, presence: true
   validates :total_amount, presence: true

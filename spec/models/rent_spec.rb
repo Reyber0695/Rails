@@ -8,6 +8,10 @@ RSpec.describe Rent, type: :model do
     it { should belong_to :home }
   end
 
+  describe 'Validations' do
+    it { should validate_presence_of :status }
+  end
+
   context "valid rent" do
     it { expect(rent).to be_valid }
 
