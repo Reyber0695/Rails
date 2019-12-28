@@ -14,4 +14,8 @@ class User
   validates :last_name, presence: true
   validates :mobile_phone, presence: true
   validates :work_place, presence: true
+
+  def send_welcome_email
+    UserMailer.welcome_email(self).deliver_now
+  end
 end

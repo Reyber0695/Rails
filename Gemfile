@@ -50,6 +50,7 @@ group :test do
   gem 'database_cleaner'
   gem 'mongoid-rspec'
   gem "mongoid-enum", github: 'dingxizheng/mongoid-enum'
+  gem "letter_opener", group: :development
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
