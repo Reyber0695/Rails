@@ -1,4 +1,35 @@
-<h1>Welcome Reyber</h1>
-<p>
-  This is a welcome email!
-</p>
+<header class="center">
+      <%=image_tag  "homie", class: "homie" %>
+      <%=image_tag  "bar", class: "bars" %>
+    </header>
+    <section class="info center">
+      <span>Hola Propietario Apellido</span>
+      <p> 
+        ¿Recuerdas el registro que iniciaste para poner en renta tu propiedad con nosotros? <br>
+Continúa el proceso y disfruta de todo lo que te ofrecemos. En Homie queremos que rentes tu <br> inmueble en el menor tiempo posible, por ello también publicamos tu anuncio en:
+      </p>
+      <div class="images">
+        <div style="margin-bottom: 20px;">
+          <%=image_tag "lamudi", class: "lamudi" %>
+          <%=image_tag "metros", class: "meters" %>
+        </div>
+        <div style="margin-bottom: 20px;">
+          <%=image_tag "inmuebles24", class: "inmuebles" %>
+          <%=image_tag "craiglist", class: "craiglist" %>
+        </div>
+        <div style="margin-bottom: 20px;">
+          <%=image_tag "goplaceit", class: "goplaceit" %>
+          <%=image_tag "propiedades", class: "propiedades" %>
+          <%=image_tag "mercado", class: "mercado" %>
+        </div>
+      </div>
+      <p>
+        así como en anuncios destacados dentro de Facebook y Google, <br>
+todo esto sin costo y sin pedirte exclusividad. ¡No dejes pasar la oportunidad!
+      </p>
+      <button type="button">
+        continua tu registro ahora
+      </button>
+    </section>
+
+    <%= stylesheet_link_tag 'welcome_mail'%>

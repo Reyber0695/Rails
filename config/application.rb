@@ -30,5 +30,7 @@ module Blog
     config.generators do |g|
       g.test_framework :rspec
     end
+    config.action_controller.asset_host
+    config.action_mailer.asset_host
   end
 end

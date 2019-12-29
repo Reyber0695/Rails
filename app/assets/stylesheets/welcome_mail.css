@@ -1,0 +1,91 @@
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.center {
+  margin: auto;
+}
+
+header{
+  height: 200px;
+  width: 750px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+header .homie {
+  height: 70px;
+  width: 150px;
+}
+
+header .bars {
+  height: 130px;
+  width: 750px;
+}
+
+section.info {
+  height: 400px;
+  width: 750px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+section.info span {
+  display: block;
+  margin-top: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+section.info p {
+  text-align: center;
+  margin-top: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+section.info .images {
+  height: 180px;
+  width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  align-content: space-between;
+  margin-top: 20px;
+}
+
+section.info .images .lamudi,
+section.info .images .meters {
+  height: 20px;
+  width: 150px;
+  margin-left: 20px;
+}
+
+section.info .images .inmuebles,
+section.info .images .craiglist {
+  height: 20px;
+  width: 150px;
+  margin-left: 20px;
+}
+
+section.info .images .goplaceit,
+section.info .images .propiedades,
+section.info .images .mercado {
+  height: 20px;
+  width: 150px;
+  margin-left: 20px;
+}
+
+section.info button {
+  margin-top: 20px;
+  width: 300px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px 0px;
+  background: transparent;
+  color: #8d7aff;
+  border: 1px #8d7aff solid;
+}
