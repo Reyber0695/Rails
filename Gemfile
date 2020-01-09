@@ -26,6 +26,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem "mongoid-enum", github: 'dingxizheng/mongoid-enum'
 end
 
 group :development do
@@ -49,7 +50,6 @@ group :test do
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'mongoid-rspec'
-  gem "mongoid-enum", github: 'dingxizheng/mongoid-enum'
   gem "letter_opener", group: :development
 end
 

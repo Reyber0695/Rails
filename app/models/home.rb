@@ -15,8 +15,13 @@ class Home
       furnished: false,
       gym: false
     }
+  field :location, type: Array, default: [
+    0.00,
+    0.00
+  ]
+  field :master_home_id, type: String , default: nil
 
-  has_many :rents
+  #has_many :rents
   belongs_to :owner
 
   validates :status, presence: true
@@ -24,6 +29,7 @@ class Home
   validates :extra_services, presence: true
   validates :total_amount, presence: true
   validates :home_features, presence: true
+  validates :location, presence: true
 
   private
 
@@ -31,3 +37,5 @@ class Home
     self.total_amount = price + extra_services
   end
 end
+
+

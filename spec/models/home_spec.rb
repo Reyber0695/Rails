@@ -14,6 +14,7 @@ RSpec.describe Home, type: :model do
     it { should validate_presence_of :extra_services }
     it { should validate_presence_of :total_amount }
     it { should validate_presence_of :home_features }
+    it { should validate_presence_of :location }
   end
 
   context "valid home" do
