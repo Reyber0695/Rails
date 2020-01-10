@@ -4,7 +4,7 @@ class Owner
   field :curp, type: String
   field :registered_in_srpago, type: Boolean
 
-  #has_many :homes
+  has_many :homes
   belongs_to :user
 
   validates :curp, presence: true

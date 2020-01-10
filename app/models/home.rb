@@ -21,7 +21,7 @@ class Home
   ]
   field :master_home_id, type: String , default: nil
 
-  #has_many :rents
+  has_many :rents
   belongs_to :owner
 
   validates :status, presence: true
